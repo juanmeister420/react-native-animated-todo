@@ -59,21 +59,21 @@ const Sidebar = (props: DrawerContentComponentProps) => {
           borderWidth={3}
         />
         <Heading mb={4} size="xl">
-          Takuya Matsuyama
+          Maciej Monkiewicz
         </Heading>
         <MenuButton
           active={currentRoute === 'Main'}
           onPress={handlePressMenuMain}
           icon="inbox"
         >
-          Tasks
+          Zadania
         </MenuButton>
         <MenuButton
           active={currentRoute === 'About'}
           onPress={handlePressMenuAbout}
           icon="info"
         >
-          About
+          O aplikacji
         </MenuButton>
       </VStack>
       <Center>

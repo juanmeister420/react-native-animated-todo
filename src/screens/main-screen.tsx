@@ -10,13 +10,18 @@ import NavBar from '../components/navbar'
 const initialData = [
   {
     id: shortid.generate(),
-    subject: 'Buy movie tickets for Friday',
+    subject: '😣 Nauczyć się na matematykę',
     done: false
   },
   {
     id: shortid.generate(),
-    subject: 'Make a React Native tutorial',
+    subject: '📚 Przeczytać lekturę',
     done: false
+  },
+  {
+    id: shortid.generate(),
+    subject: '🤑 Zarobić gruby pieniądz',
+    done: true
   }
 ]
 
@@ -66,7 +71,7 @@ export default function MainScreen() {
       w="full"
     >
       <Masthead
-        title="What's up, Takuya!"
+        title="What's up, Maciej!"
         image={require('../assets/masthead.png')}
       >
         <NavBar />
