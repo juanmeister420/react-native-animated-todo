@@ -6,13 +6,16 @@ import {
   Avatar,
   Heading,
   IconButton,
-  useColorModeValue
+  useColorModeValue,
+  View,
+  Button
 } from 'native-base'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
 import AnimatedColorBox from './animated-color-box'
 import ThemeToggle from './theme-toggle'
 import { Feather } from '@expo/vector-icons'
 import MenuButton from './menu-button'
+import { Image, TouchableOpacity } from 'react-native'
 
 const Sidebar = (props: DrawerContentComponentProps) => {
   const { state, navigation } = props
@@ -77,6 +80,24 @@ const Sidebar = (props: DrawerContentComponentProps) => {
         </MenuButton>
       </VStack>
       <Center>
+        <View style={{ flexDirection:"row", justifyContent: "space-between", width: 150}}>
+          {/* Orange */}
+          <Button
+            style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#FF7F50" }}
+          />
+          {/* Blue */}
+          <Button
+            style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#5352ED" }}
+          />
+          {/*  Yellow */}
+          <Button
+            style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#FFEEB4" }}
+          />
+          {/* Purple */}
+          <Button
+            style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#CCB4FF" }}
+          />
+        </View>
         <ThemeToggle />
       </Center>
     </AnimatedColorBox>
