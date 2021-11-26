@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import {
   HStack,
   VStack,
@@ -16,6 +16,7 @@ import ThemeToggle from './theme-toggle'
 import { Feather } from '@expo/vector-icons'
 import MenuButton from './menu-button'
 import { Image, TouchableOpacity } from 'react-native'
+import useTheme from './theme-context'
 
 const Sidebar = (props: DrawerContentComponentProps) => {
   const { state, navigation } = props
@@ -30,7 +31,7 @@ const Sidebar = (props: DrawerContentComponentProps) => {
   const handlePressMenuAbout = useCallback(() => {
     navigation.navigate('About')
   }, [navigation])
-
+  const {changeColor} = useTheme ()  
   return (
     <AnimatedColorBox
       safeArea
@@ -84,18 +85,22 @@ const Sidebar = (props: DrawerContentComponentProps) => {
           {/* Orange */}
           <Button
             style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#FF7F50" }}
+            onPress={() => changeColor('orange')}
           />
           {/* Blue */}
           <Button
             style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#5352ED" }}
+            onPress={() => changeColor('blue')}
           />
           {/*  Yellow */}
           <Button
             style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#FFEEB4" }}
+            onPress={() => changeColor('yellow')}
           />
           {/* Purple */}
           <Button
             style={{ height: 30, width: 30, borderRadius: 30, borderWidth: 2, borderColor: '#fff', backgroundColor: "#CCB4FF" }}
+            onPress={() => changeColor('purple')}
           />
         </View>
         <ThemeToggle />

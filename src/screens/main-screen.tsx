@@ -6,6 +6,7 @@ import TaskList from '../components/task-list'
 import shortid from 'shortid'
 import Masthead from '../components/masthead'
 import NavBar from '../components/navbar'
+import useTheme from '../components/theme-context'
 
 const initialData = [
   {
@@ -24,6 +25,7 @@ const initialData = [
     done: true
   }
 ]
+
 
 export default function MainScreen() {
   const [data, setData] = useState(initialData)
@@ -64,6 +66,8 @@ export default function MainScreen() {
     })
   }, [])
 
+  const {theme} = useTheme ()  
+  // theme is variable from theme-context.tsx, it gets blue, orange, purple, yellow values
   return (
     <AnimatedColorBox
       flex={1}
